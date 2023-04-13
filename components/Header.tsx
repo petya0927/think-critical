@@ -1,10 +1,10 @@
 export default function Header() {
   return (
-    <div className="flex flex-row justify-between items-center py-8 sm:py-16 px-12 sm:px-24">
+    <div className="flex flex-row justify-between items-center gap-4 py-8 lg:py-16 px-12 lg:px-24">
       <img
         src="/assets/images/logo.png"
         alt="logo"
-        className="w-1/2 sm:w-auto"
+        className="w-1/2 xs:w-auto z-10"
       />
       <img
         src="/assets/icons/hamburger-menu-green-icon.svg"
