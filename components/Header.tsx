@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <div className="flex flex-row justify-between items-center gap-4 py-8 lg:py-16 px-12 lg:px-24">
+    <div className="flex flex-row justify-between items-center gap-4 py-6 lg:py-16 px-6 lg:px-24">
       <img
         src="/assets/images/logo.png"
         alt="logo"
