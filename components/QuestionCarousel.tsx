@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Question } from "../utils/types";
 import styles from "../styles/QuestionCarousel.module.css";
 
@@ -6,22 +6,24 @@ export default function QuestionCarousel() {
   const questions: Question[] = [
     {
       id: 1,
-      question: "What is your name?",
+      question: "Who viewed my Instagram story?",
     },
     {
       id: 2,
-      question: "What is your age?",
+      question: "Are the news true?",
     },
     {
       id: 3,
-      question: "What is your favorite color?",
+      question: "Do you really know who you are chatting with?",
     },
   ];
 
   const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
+  const [previousQuestion, setPreviousQuestion] = useState(questions[0]);
   const [direction, setDirection] = useState("");
 
-  const handleArrowClick = (direction: string) => {
+  const handleArrowClick = async (direction: string) => {
+    setPreviousQuestion(currentQuestion);
     if (direction === "up") {
       setDirection("up");
       if (currentQuestion.id === 1) {
@@ -39,23 +41,41 @@ export default function QuestionCarousel() {
     }
   };
 
+  useEffect(() => {
+    const previousQuestionElement = document.getElementById(
+      previousQuestion.id.toString()
+    );
+    const currentQuestionElement = document.getElementById(
+      currentQuestion.id.toString()
+    );
+    if (direction === "up") {
+      previousQuestionElement?.classList.add(styles.fadeOutUp);
+      currentQuestionElement?.classList.add(styles.fadeInUp);
+    } else {
+      previousQuestionElement?.classList.add(styles.fadeOutDown);
+      currentQuestionElement?.classList.add(styles.fadeInDown);
+    }
+
+    setTimeout(() => {
+      previousQuestionElement?.classList.remove(styles.fadeOutUp);
+      previousQuestionElement?.classList.remove(styles.fadeOutDown);
+      currentQuestionElement?.classList.remove(styles.fadeInUp);
+      currentQuestionElement?.classList.remove(styles.fadeInDown);
+    }, 500);
+  }, [currentQuestion]);
+
   return (
-    <div className="flex flex-col items-center justify-between absolute top-0 w-full h-screen py-32 lg:py-20 px-6">
+    <div className="flex flex-col items-center justify-between absolute top-0 w-full h-screen py-32 lg:py-20 px-6 lg:px-24">
       <button onClick={() => handleArrowClick("up")}>
         <img src="/assets/icons/arrow-up-white-icon.svg" alt="up arrow" />
       </button>
-      {/* <p className="text-white font-semibold text-5xl lg:text-7xl text-center">
-        {currentQuestion.question}
-      </p> */}
       {questions.map((question) => (
         <p
           key={question.id}
-          className={[
-            `text-white font-semibold text-5xl lg:text-7xl text-center hidden ${
-              question.id === currentQuestion.id ? styles.active : ""
-            }`,
-            direction === "up" ? styles.fadeInUp : styles.fadeInDown,
-          ].join(" ")}
+          id={question.id.toString()}
+          className={`text-white font-semibold text-5xl lg:text-7xl text-center uppercase absolute top-1/2 -translate-y-1/2 ${
+            question.id === currentQuestion.id ? "opacity-100" : "opacity-0"
+          }`}
         >
           {question.question}
         </p>
