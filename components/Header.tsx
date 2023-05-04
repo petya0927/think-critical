@@ -4,7 +4,7 @@ export default function Header() {
       <img
         src="/assets/images/logo.png"
         alt="logo"
-        className="w-1/2 xs:w-auto z-10"
+        className="w-1/3 xs:w-auto z-10"
       />
       <img
         src="/assets/icons/hamburger-menu-green-icon.svg"

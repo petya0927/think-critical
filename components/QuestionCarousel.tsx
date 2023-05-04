@@ -73,7 +73,7 @@ export default function QuestionCarousel() {
         <p
           key={question.id}
           id={question.id.toString()}
-          className={`text-white font-semibold text-5xl lg:text-7xl text-center uppercase absolute top-1/2 -translate-y-1/2 ${
+          className={`text-white font-semibold text-5xl lg:text-7xl text-center uppercase absolute top-1/2 -translate-y-1/2 px-10 sm:px-20 lg:px-32 ${
             question.id === currentQuestion.id ? "opacity-100" : "opacity-0"
           }`}
         >
