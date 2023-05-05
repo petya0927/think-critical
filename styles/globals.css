@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "PPMori";
+  src: url("/assets/fonts/PPMori-SemiBold.otf") format("opentype");
+  font-weight: 600;
+}
+
+html {
+  font-family: "PPMori", sans-serif;
+}
+
 body {
   background-color: #121212;
 }
