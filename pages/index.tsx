@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import LoaderOverlay from "@/components/LoaderOverlay";
 import QuestionCarousel from "@/components/QuestionCarousel";
 import styles from "@/styles/Index.module.css";
+import { questions } from "@/public/questions.js";
 
 export default function Index() {
   return (
@@ -11,7 +12,16 @@ export default function Index() {
         <img src="./assets/images/background.png" className={styles.bg} />
       </div>
       <Header />
-      <QuestionCarousel />
+      <QuestionCarousel questions={questions} />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  console.log(questions);
+  return {
+    props: {
+      questions,
+    },
+  };
 }
