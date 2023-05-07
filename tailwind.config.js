@@ -16,6 +16,7 @@ module.exports = {
       colors: {
         primary: "#6ec5a4",
         darkGray: "#1E1E1E",
+        lightGray: "#727272",
       },
       fontFamily: {
         helvetica: ["Helvetica", ...defaultTheme.fontFamily.sans],
