@@ -20,12 +20,13 @@ export default function ResponseElement({ response }: { response: ResponseT }) {
             )
           )}
         </div>
-        {response.fields.media.fields && (
-          <img
-            src={`https:${response.fields.media.fields.file.url}`}
-            className="w-72 ml-auto lg:ml-0"
-          />
-        )}
+        {response.fields.media !== undefined &&
+          response.fields.media.fields && (
+            <img
+              src={`https:${response.fields.media.fields.file.url}`}
+              className="w-72 ml-auto lg:ml-0"
+            />
+          )}
       </div>
     </div>
   );
