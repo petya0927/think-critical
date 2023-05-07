@@ -63,7 +63,7 @@ export default function QuestionCarousel({
   }, [currentQuestion, previousQuestion]);
 
   return (
-    <div className="flex flex-col items-center justify-between absolute top-0 w-full h-screen py-32 lg:py-20 px-6 lg:px-24">
+    <div className="flex flex-col items-center justify-between absolute top-0 w-full h-screen py-32 lg:py-20 px-6 lg:px-24 z-0">
       <button onClick={() => handleArrowClick("up")}>
         <img src="/assets/icons/arrow-up-white-icon.svg" alt="up arrow" />
       </button>
