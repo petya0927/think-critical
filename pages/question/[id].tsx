@@ -7,7 +7,7 @@ import {
 import { Question, ResponseT } from "@/utils/types";
 import Menu from "@/components/Menu";
 import { useState } from "react";
-import ResponseElement from "@/components/Response";
+import ResponseElement from "@/components/ResponseElement";
 
 export default function Question({ questionData }: { questionData: Question }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,12 +21,11 @@ export default function Question({ questionData }: { questionData: Question }) {
           {questionData.fields.title}
         </h1>
         <p className="text-2xl">{questionData.fields.leadText}</p>
-        {questionData.fields.response.map((response: ResponseT) => (
-          <ResponseElement
-            key={questionData.fields.response.indexOf(response)}
-            response={response}
-          />
-        ))}
+        {questionData.fields.response.map(
+          (response: ResponseT, index: number) => (
+            <ResponseElement key={index} response={response} />
+          )
+        )}
       </div>
     </div>
   );

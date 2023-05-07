@@ -9,13 +9,15 @@ export default function ResponseElement({ response }: { response: ResponseT }) {
         </h2>
       </div>
       <div className="px-10 py-7 flex flex-col lg:flex-row items-start gap-4">
-        <div className="w-auto">
-          {response.fields.description.content.map((content: any) => (
-            <>
-              <p className="text-lg">{content.content[0].value}</p>
-              <br />
-            </>
-          ))}
+        <div className="w-full">
+          {response.fields.description.content.map(
+            (content: any, index: number) => (
+              <div key={index}>
+                <p className="text-lg">{content.content[0].value}</p>
+                <br />
+              </div>
+            )
+          )}
         </div>
         {response.fields.media.fields && (
           <img
