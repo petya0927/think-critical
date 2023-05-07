@@ -21,17 +21,17 @@ export default function QuestionCarousel({
       setPreviousQuestion(currentQuestion);
       if (direction === "up") {
         setDirection("up");
-        if (currentQuestion.id === 1) {
+        if (questions.indexOf(currentQuestion) === 0) {
           setCurrentQuestion(questions[questions.length - 1]);
         } else {
-          setCurrentQuestion(questions[currentQuestion.id - 2]);
+          setCurrentQuestion(questions[questions.indexOf(currentQuestion) - 1]);
         }
       } else {
         setDirection("down");
-        if (currentQuestion.id === questions.length) {
+        if (questions.indexOf(currentQuestion) === questions.length - 1) {
           setCurrentQuestion(questions[0]);
         } else {
-          setCurrentQuestion(questions[currentQuestion.id]);
+          setCurrentQuestion(questions[questions.indexOf(currentQuestion) + 1]);
         }
       }
     }
@@ -40,10 +40,10 @@ export default function QuestionCarousel({
   useEffect(() => {
     if (currentQuestion && previousQuestion) {
       const previousQuestionElement = document.getElementById(
-        previousQuestion.id.toString()
+        previousQuestion.sys.id
       );
       const currentQuestionElement = document.getElementById(
-        currentQuestion.id.toString()
+        currentQuestion.sys.id
       );
       if (direction === "up") {
         previousQuestionElement?.classList.add(styles.fadeOutUp);
@@ -68,19 +68,18 @@ export default function QuestionCarousel({
         <img src="/assets/icons/arrow-up-white-icon.svg" alt="up arrow" />
       </button>
       {questions &&
-        currentQuestion &&
         questions.map((question) => (
           <Link
-            href={`/question/${question.id}`}
-            key={question.id}
-            id={question.id.toString()}
+            href={`/question/${question.sys.id}`}
+            key={question.sys.id}
+            id={question.sys.id}
             className={`text-white font-semibold text-5xl lg:text-7xl text-center uppercase absolute top-1/2 -translate-y-1/2 px-10 sm:px-20 lg:px-32 ${
-              question.id === currentQuestion.id
+              question.sys.id === currentQuestion.sys.id
                 ? "opacity-100 z-10"
                 : "opacity-0 z-0"
             }`}
           >
-            {question.question}
+            {question.fields.title}
           </Link>
         ))}
       <button onClick={() => handleArrowClick("down")}>

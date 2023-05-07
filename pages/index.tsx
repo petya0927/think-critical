@@ -2,9 +2,9 @@ import Header from "@/components/Header";
 import LoaderOverlay from "@/components/LoaderOverlay";
 import QuestionCarousel from "@/components/QuestionCarousel";
 import styles from "@/styles/Index.module.css";
-import { questions } from "@/public/questions.js";
+import { getQuestions } from "@/utils/quesions";
 
-export default function Index() {
+export default function Index({ questions }: { questions: any }) {
   return (
     <div className="h-screen relative overflow-hidden">
       <LoaderOverlay />
@@ -18,7 +18,8 @@ export default function Index() {
 }
 
 export async function getStaticProps() {
-  console.log(questions);
+  const questions = await getQuestions();
+
   return {
     props: {
       questions,
