@@ -8,7 +8,7 @@ export default function ResponseElement({ response }: { response: ResponseT }) {
           {response.fields.title}
         </h2>
       </div>
-      <div className="px-10 py-7 flex items-start gap-4">
+      <div className="px-10 py-7 flex flex-col lg:flex-row items-start gap-4">
         <div className="w-auto">
           {response.fields.description.content.map((content: any) => (
             <>
@@ -20,7 +20,7 @@ export default function ResponseElement({ response }: { response: ResponseT }) {
         {response.fields.media.fields && (
           <img
             src={`https:${response.fields.media.fields.file.url}`}
-            className="w-72"
+            className="w-72 ml-auto lg:ml-0"
           />
         )}
       </div>

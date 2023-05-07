@@ -22,7 +22,10 @@ export default function Question({ questionData }: { questionData: Question }) {
         </h1>
         <p className="text-2xl">{questionData.fields.leadText}</p>
         {questionData.fields.response.map((response: ResponseT) => (
-          <ResponseElement response={response} />
+          <ResponseElement
+            key={questionData.fields.response.indexOf(response)}
+            response={response}
+          />
         ))}
       </div>
     </div>
