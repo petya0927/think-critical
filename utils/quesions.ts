@@ -26,3 +26,12 @@ export async function getQuestionData(id: string) {
 
   return question;
 }
+
+export async function getResponses(id: string) {
+  const response = await client.getEntries({
+    content_type: "response",
+    "sys.id": id,
+  });
+
+  return response.items;
+}
