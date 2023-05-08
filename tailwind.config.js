@@ -9,6 +9,10 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      normal: ["PPMori", ...defaultTheme.fontFamily.sans],
+      semibold: ["PPMori SemiBold", ...defaultTheme.fontFamily.sans],
+    },
     extend: {
       screens: {
         xs: "425px",
