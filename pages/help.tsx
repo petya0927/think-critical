@@ -44,9 +44,9 @@ export default function HelpPage() {
           <br />
           <p className="text-2xl font-helvetica">
             This way of thinking not only develops your vision, but also your
-            child's, as it encourages reflection and mature criticism. In the
-            following sections, we have put together some useful tips to help
-            you learn this technique.
+            child&apos;s, as it encourages reflection and mature criticism. In
+            the following sections, we have put together some useful tips to
+            help you learn this technique.
           </p>
         </div>
         <div>
@@ -93,7 +93,7 @@ export default function HelpPage() {
           objective thinking. Please note that #CRITICAL THINKING is a campaign
           within the framework of a university project, which is still in its
           infancy. As a resource we have used sites that can provide more
-          advanced help on this issue. If you'd like to go deeper into the
+          advanced help on this issue. If you&apos;d like to go deeper into the
           subject, take a look at the document below, which summarises all the
           sources we used to create this page.
         </p>
