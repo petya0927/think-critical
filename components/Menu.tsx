@@ -9,9 +9,9 @@ export default function Menu({
 }) {
   return (
     <div
-      className={`absolute top-0 right-0 w-full sm:w-[168px] lg:w-[240px] z-10 py-20 h-full bg-primary transition-all duration-300 flex flex-col gap-8 sm:gap-4 lg:gap-8 items-center overflow-hidden ${
-        isMenuOpen ? "w-full" : "w-0"
-      } ${isMenuOpen && !isMainPage ? "flex xs:hidden" : ""}`}
+      className={`absolute top-0 right-0 z-10 py-20 h-full bg-primary transition-all duration-300 flex flex-col gap-8 sm:gap-4 lg:gap-8 items-center overflow-hidden ${
+        isMenuOpen ? "w-full sm:w-[168px] lg:w-[240px]" : "w-0"
+      } ${isMenuOpen && !isMainPage ? "xs:hidden" : ""}`}
     >
       <Link
         href="/help"
