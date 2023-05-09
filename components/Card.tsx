@@ -10,7 +10,7 @@ export default function Card({
   buttonText: string;
 }) {
   return (
-    <div className="bg-primary rounded-[20px] px-10 py-9 w-full md:w-1/3 md:max-w-[320px] max-h-min flex flex-col gap-8">
+    <div className="bg-primary rounded-[20px] px-10 py-9 w-full max-h-min flex flex-col gap-8">
       <h3 className="font-semibold text-2xl text-center">{title}</h3>
       <img
         src={image}

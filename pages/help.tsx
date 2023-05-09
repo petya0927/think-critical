@@ -54,7 +54,7 @@ export default function HelpPage() {
             <h2 className="font-semibold text-4xl mb-7">
               Guides for Parents and Their Children
             </h2>
-            <div className="flex flex-col md:flex-row gap-5">
+            <div className="grid grid-flow-row lg:grid-flow-col grid-rows-2 lg:grid-rows-1 grid-cols-1 lg:grid-cols-3 gap-5">
               <Card
                 title="Mini Guide for 5-9 Years Olds"
                 buttonText="Let's see"
@@ -74,7 +74,7 @@ export default function HelpPage() {
           </div>
           <div className="">
             <h2 className="font-semibold text-4xl mb-7">Guides for Adults</h2>
-            <div className="flex flex-col md:flex-row gap-5">
+            <div className="grid grid-flow-row lg:grid-flow-col grid-rows-2 lg:grid-rows-1 grid-cols-1 lg:grid-cols-3 gap-5">
               <Card
                 title="How to Ask Great Questions?"
                 buttonText="Let's see"

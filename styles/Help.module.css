@@ -10,5 +10,5 @@
   height: 100%;
   background: url("/assets/images/underline.png") bottom no-repeat;
   background-size: 100% 13px;
-  transform: rotate(-190deg) translateY(-45px);
+  transform: rotate(-190deg) translate(5px, -38px);
 }
