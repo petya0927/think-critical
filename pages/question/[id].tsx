@@ -1,4 +1,4 @@
-import PageHeader from "@/components/PageHeader";
+import Navbar from "@/components/Navbar";
 import {
   getAllQuestionIds,
   getQuestionData,
@@ -10,16 +10,15 @@ import { useState } from "react";
 import ResponseElement from "@/components/ResponseElement";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Layout from "@/components/Layout";
 
 export default function Question({ questionData }: { questionData: Question }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     questionData && (
-      <div>
+      <Layout>
         <div className="bg-white pb-52">
-          <Menu isMenuOpen={isMenuOpen} isMainPage={false} />
-          <PageHeader isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
           <div className="flex flex-col gap-16 items-center mt-10 sm:mt-16 px-7 md:px-32 xl:px-80 2xl:px-[500px] relative max-w-[2000px] m-auto">
             <h1 className="font-semibold text-4xl md:text-6xl text-center max-w-[790px]">
               {questionData.fields.title}
@@ -38,8 +37,7 @@ export default function Question({ questionData }: { questionData: Question }) {
             )}
           </div>
         </div>
-        <Footer />
-      </div>
+      </Layout>
     )
   );
 }
