@@ -7,11 +7,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <>
+    <div>
       <Menu isMenuOpen={isMenuOpen} isMainPage={false} />
       <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <main>{children}</main>
       <Footer />
-    </>
+    </div>
   );
 }

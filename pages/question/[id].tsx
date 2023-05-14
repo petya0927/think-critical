@@ -8,9 +8,8 @@ import { Question, ResponseT } from "@/utils/types";
 import Menu from "@/components/Menu";
 import { useState } from "react";
 import ResponseElement from "@/components/ResponseElement";
-import Footer from "@/components/Footer";
-import Link from "next/link";
 import Layout from "@/components/Layout";
+import BackButton from "@/components/BackButton";
 
 export default function Question({ questionData }: { questionData: Question }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,12 +22,7 @@ export default function Question({ questionData }: { questionData: Question }) {
             <h1 className="font-semibold text-4xl md:text-6xl text-center max-w-[790px]">
               {questionData.fields.title}
             </h1>
-            <Link href="/" className="xl:absolute xl:top-44 xl:left-40 mr-auto">
-              <img
-                src="/assets/icons/arrow-back-green-icon.svg"
-                className="cursor-pointer"
-              />
-            </Link>
+            <BackButton />
             <p className="text-2xl">{questionData.fields.leadText}</p>
             {questionData.fields.response.map(
               (response: ResponseT, index: number) => (
