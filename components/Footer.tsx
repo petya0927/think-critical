@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <div className="bg-darkGray flex flex-col justify-center items-center gap-14 pt-20 pb-14 text-lightGray text-xs font-helvetica text-center px-7 md:px-32 xl:px-80 2xl:px-[500px]">
-      <div className="flex flex-row justify-between items-center w-full">
+      <div className="flex flex-col md:flex-row justify-between items-center w-full gap-10">
         <Link href="/">
           <img src="/assets/images/logo-white.png" />
         </Link>
@@ -14,7 +14,7 @@ export default function Footer() {
             Instagram
           </Link>
         </div>
-        <div className="flex flex-row gap-7">
+        <div className="flex flex-row gap-10">
           <Link
             href="http://mdi.uni-eszterhazy.hu/"
             passHref={true}
