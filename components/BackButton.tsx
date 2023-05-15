@@ -10,8 +10,7 @@ export default function BackButton({ className }: { className?: string }) {
       href="/"
       onClick={() => router.back()}
       className={
-        className ||
-        "xl:absolute xl:top-48 xl:left-[12%] 2xl:left-[17%] mr-auto"
+        className || "xl:absolute xl:top-48 mr-auto xl:-translate-x-[140px]"
       }
     >
       <Image

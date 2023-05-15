@@ -16,8 +16,8 @@ export default function Question({ questionData }: { questionData: Question }) {
     questionData && (
       <Layout>
         <div className="bg-white pb-10">
-          <div className="flex flex-col gap-16 items-center mt-10 sm:mt-16 px-7 md:px-32 xl:px-80 2xl:px-[500px] relative max-w-[2000px] m-auto">
-            <h1 className="font-semibold text-4xl md:text-6xl text-center max-w-[790px]">
+          <div className="flex flex-col gap-16 mt-10 sm:mt-16 px-7 md:px-32 xl:px-80 relative max-w-[2000px] m-auto">
+            <h1 className="font-semibold text-4xl md:text-6xl text-center max-w-[790px] mx-auto">
               {questionData.fields.title}
             </h1>
             <BackButton />

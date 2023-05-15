@@ -12,7 +12,7 @@ export default function HelpPage() {
     <Layout>
       <div className="bg-darkGray">
         <div className="flex flex-col lg:flex-row justify-between gap-8 pt-10 xs:pt-20 md:pt-24 px-7 md:px-32 xl:px-80 pb-10 xs:pb-20 md:pb-24 max-w-[2000px] m-auto">
-          <h1 className="text-white font-semibold text-4xl xl:text-5xl tracking-wide text-center md:text-left lg:w-1/2">
+          <h1 className="text-white font-semibold text-4xl xl:text-5xl tracking-wide text-center md:text-left lg:w-1/2 my-auto">
             So many things are questionable..
             <br />
             Our aim is to help{" "}
@@ -21,12 +21,12 @@ export default function HelpPage() {
           <img
             src="/assets/images/help-hero.png"
             alt=""
-            className="w-full xs:w-2/3 lg:w-1/2 h-full m-auto -mb-20 xs:-mb-40 sm:-mb-48 md:-mr-16 md:ml-auto lg:ml-0 rotate-[10.98deg]"
+            className="w-full xs:w-2/3 lg:w-2/3 max-w-xl h-full m-auto -mb-20 xs:-mb-40 sm:-mb-48 md:-mr-16 md:ml-auto lg:ml-0 rotate-[10.98deg]"
           />
         </div>
       </div>
-      <div className="pt-20 xs:pt-40 pb-32 px-7 md:px-32 xl:px-80 2xl:px-[500px] max-w-[2000px] m-auto flex flex-col gap-16">
-        <BackButton />
+      <div className="pt-20 xs:pt-40 pb-32 px-7 md:px-32 xl:px-80 max-w-[2000px] mx-auto flex flex-col gap-16">
+        <BackButton className="xl:absolute xl:top-[46rem] mr-auto xl:-translate-x-[140px]" />
         <div>
           <p className="text-2xl font-helvetica">
             Critical thinking skills allow you to understand and address
