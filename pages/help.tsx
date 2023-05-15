@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import Card from "@/components/Card";
+import ResourceCard from "@/components/ResourceCard";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import styles from "@/styles/Help.module.css";
@@ -48,36 +48,41 @@ export default function HelpPage() {
             <h2 className="font-semibold text-4xl mb-7">
               Guides for Parents and Their Children
             </h2>
-            <div className="grid grid-flow-row lg:grid-flow-col grid-rows-2 lg:grid-rows-1 grid-cols-1 lg:grid-cols-3 gap-5">
-              <Card
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              <ResourceCard
                 title="Mini Guide for 5-9 Years Olds"
                 buttonText="Let's see"
                 image="/assets/images/child-1.png"
+                link="/assets/files/critical_think_5-9.pdf"
               />
-              <Card
+              <ResourceCard
                 title="Mini Guide for 10-12 Years Olds"
                 buttonText="Let's see"
                 image="/assets/images/child-2.png"
+                link="/assets/files/critical_think_10-12.pdf"
               />
-              <Card
+              <ResourceCard
                 title="Mini Guide for 13 and Olders"
                 buttonText="Let's see"
                 image="/assets/images/child-3.png"
+                link="/assets/files/critical_think_13.pdf"
               />
             </div>
           </div>
           <div className="">
             <h2 className="font-semibold text-4xl mb-7">Guides for Adults</h2>
-            <div className="grid grid-flow-row lg:grid-flow-col grid-rows-2 lg:grid-rows-1 grid-cols-1 lg:grid-cols-3 gap-5">
-              <Card
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <ResourceCard
                 title="How to Ask Great Questions?"
                 buttonText="Let's see"
                 image="/assets/images/questionmark.png"
+                link="/assets/files/critical_think_asking_questions.pdf"
               />
-              <Card
+              <ResourceCard
                 title="How to Fact Check Like a Pro?"
                 buttonText="Let's see"
                 image="/assets/images/exclamationmark.png"
+                link="/assets/files/critical_think_fact_check.pdf"
               />
             </div>
           </div>
