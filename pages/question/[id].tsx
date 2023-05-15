@@ -1,11 +1,9 @@
-import Navbar from "@/components/Navbar";
 import {
   getAllQuestionIds,
   getQuestionData,
   getResponses,
 } from "@/utils/quesions";
 import { Question, ResponseT } from "@/utils/types";
-import Menu from "@/components/Menu";
 import { useState } from "react";
 import ResponseElement from "@/components/ResponseElement";
 import Layout from "@/components/Layout";

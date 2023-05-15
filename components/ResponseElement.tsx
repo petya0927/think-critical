@@ -8,10 +8,6 @@ export default function ResponseElement({ response }: { response: ResponseT }) {
     return text.marks && text.marks.some((mark: any) => mark.type === "bold");
   };
 
-  const isCode = (text: any) => {
-    return text.marks && text.marks.some((mark: any) => mark.type === "code");
-  };
-
   const isLink = (text: any) => {
     return text.nodeType === "hyperlink";
   };
@@ -22,13 +18,17 @@ export default function ResponseElement({ response }: { response: ResponseT }) {
     );
   };
 
+  const isList = (paragraph: any) => {
+    return paragraph.nodeType === "unordered-list";
+  };
+
   return (
     <div
       className={`rounded-2xl border-primary border-2 w-full ${
         response.fields.media !== undefined ? "mb-16 lg:mb-0" : ""
       }`}
     >
-      <div className="bg-primary px-9 py-6">
+      <div className="bg-primary px-9 py-6 rounded-t-xl">
         <h2 className="font-bold text-2xl text-white">
           {response.fields.title}
         </h2>
@@ -42,33 +42,34 @@ export default function ResponseElement({ response }: { response: ResponseT }) {
           {response.fields.description.content.map(
             (paragraph: any, index: number) => (
               <div key={index}>
-                <div>
-                  {paragraph.content.map((text: any, index: number) =>
-                    isLink(text) ? (
-                      <a
-                        href={text.data.uri}
-                        target="_blank"
-                        key={index}
-                        className={`text-lg underline inline ${
-                          isBold(text) ? "font-bold" : "font-normal"
-                        } ${isCode(text) ? "text-primary font-semibold" : ""}`}
-                      >
-                        {text.content[0].value}
-                      </a>
-                    ) : (
-                      <p
-                        key={index}
-                        className={`text-lg inline ${
-                          isBold(text) ? "font-bold" : "font-normal"
-                        } ${isCode(text) ? "text-primary font-semibold" : ""} ${
-                          isUnderline(text) ? "underline" : ""
-                        }`}
-                      >
-                        {text.value}
-                      </p>
-                    )
-                  )}
-                </div>
+                {paragraph.content.map((text: any, index: number) =>
+                  isLink(text) ? (
+                    <a
+                      href={text.data.uri}
+                      target="_blank"
+                      key={index}
+                      className={`text-lg underline inline break ${
+                        isBold(text) ? "font-bold" : "font-normal"
+                      }`}
+                    >
+                      {text.content[0].value}
+                    </a>
+                  ) : (
+                    <p
+                      key={index}
+                      className={`text-lg inline ${
+                        isList(paragraph) ? "font-semibold text-primary" : ""
+                      } ${isBold(text) ? "font-semibold" : "font-normal"} ${
+                        isUnderline(text) ? "underline" : ""
+                      }`}
+                    >
+                      {isList(paragraph)
+                        ? text.content[0].content[0].value
+                        : text.value}
+                      {!isBold(text) && <br />}
+                    </p>
+                  )
+                )}
                 <br />
               </div>
             )
