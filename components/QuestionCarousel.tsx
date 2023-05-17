@@ -103,9 +103,8 @@ export default function QuestionCarousel({
                 ? "opacity-100 z-10"
                 : "opacity-0 z-0"
             }`}
-          >
-            {question.fields.title}
-          </Link>
+            dangerouslySetInnerHTML={{ __html: question.fields.title }}
+          ></Link>
         ))}
       <button onClick={() => handleArrowClick("down")}>
         <img src="/assets/icons/arrow-down-white-icon.svg" alt="down arrow" />
