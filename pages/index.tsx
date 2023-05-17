@@ -15,7 +15,7 @@ export default function Index({ questions }: { questions: any }) {
       <LoaderOverlay />
       <Link
         href="/resthere"
-        className={`absolute top-2/3 left-40 w-1/12 -rotate-[24deg] z-10 ${styles.float}`}
+        className={`absolute top-3/4 md:top-2/3 left-10 md:left-20 lg:left-40 w-1/5 md:w-1/6 lg:w-1/12 -rotate-[24deg] z-10 ${styles.float}`}
       >
         <img src="/assets/images/astronaut.svg" />
       </Link>
