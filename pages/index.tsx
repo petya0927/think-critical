@@ -5,6 +5,7 @@ import QuestionCarousel from "@/components/QuestionCarousel";
 import styles from "@/styles/Index.module.css";
 import { getQuestions } from "@/utils/quesions";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Index({ questions }: { questions: any }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,6 +13,12 @@ export default function Index({ questions }: { questions: any }) {
   return (
     <div className="h-screen relative overflow-hidden bg-[#121212]">
       <LoaderOverlay />
+      <Link
+        href="/resthere"
+        className={`absolute top-2/3 left-40 w-1/12 -rotate-[24deg] z-10 ${styles.float}`}
+      >
+        <img src="/assets/images/astronaut.svg" />
+      </Link>
       <div className="absolute w-[200vw] xs:w-screen h-screen top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-125">
         <img src="./assets/images/background.png" className={styles.bg} />
       </div>
