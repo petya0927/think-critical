@@ -34,11 +34,7 @@ export default function ResponseElement({ response }: { response: ResponseT }) {
         </h2>
       </div>
       <div className="px-5 md:px-10 py-7 flex flex-col lg:flex-row items-start gap-0 lg:gap-16">
-        <div
-          className={`w-full ${
-            response.fields.media !== undefined && "lg:w-[60%]"
-          }`}
-        >
+        <div className={`w-full`}>
           {response.fields.description.content.map(
             (paragraph: any, index: number) => (
               <div key={index}>
@@ -81,14 +77,17 @@ export default function ResponseElement({ response }: { response: ResponseT }) {
               src={`https:${response.fields.media.fields.file.url}`}
               // className={`w-1/2 xs:w-[40%] ml-auto lg:ml-0 -mb-24 lg:mb-0`}
               className={css`
-                width: 40%;
+                width: ${response.fields.mediaSize
+                  ? response.fields.mediaSize + "px"
+                  : "40%"};
+                max-width: 300px;
                 margin-left: 0;
                 margin-bottom: 0;
-                margin-top: ${response.fields.mediaOffset}px;
-                @media screen and (max-width: 425px) {
-                  width: 50%;
-                }
+                margin-top: ${response.fields.mediaOffset
+                  ? response.fields.mediaOffset
+                  : 0}px;
                 @media screen and (max-width: 1024px) {
+                  width: 50%;
                   margin-left: auto;
                   margin-bottom: -6rem;
                   margin-top: 0;
