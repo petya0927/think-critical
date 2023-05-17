@@ -1,15 +1,11 @@
 import { ResponseT } from "@/utils/types";
-import Link from "next/link";
+import { css } from "@emotion/css";
 
 export default function ResponseElement({ response }: { response: ResponseT }) {
-  console.log(response.fields.title, response.fields.description);
+  console.log(response.fields);
 
   const isBold = (text: any) => {
     return text.marks && text.marks.some((mark: any) => mark.type === "bold");
-  };
-
-  const isCode = (text: any) => {
-    return text.marks && text.marks.some((mark: any) => mark.type === "code");
   };
 
   const isLink = (text: any) => {
@@ -22,45 +18,58 @@ export default function ResponseElement({ response }: { response: ResponseT }) {
     );
   };
 
+  const isList = (paragraph: any) => {
+    return paragraph.nodeType === "unordered-list";
+  };
+
   return (
-    <div className="rounded-2xl border-primary border-2 overflow-hidden w-full">
-      <div className="bg-primary px-9 py-6">
+    <div
+      className={`rounded-2xl border-primary border-2 w-full ${
+        response.fields.media !== undefined ? "mb-16 lg:mb-0" : ""
+      }`}
+    >
+      <div className="bg-primary px-9 py-6 rounded-t-xl">
         <h2 className="font-bold text-2xl text-white">
           {response.fields.title}
         </h2>
       </div>
-      <div className="px-5 md:px-10 py-7 flex flex-col lg:flex-row items-start gap-4">
-        <div className="w-full lg:w-[55%]">
+      <div className="px-5 md:px-10 py-7 flex flex-col lg:flex-row items-start gap-0 lg:gap-16">
+        <div
+          className={`w-full ${
+            response.fields.media !== undefined && "lg:w-[60%]"
+          }`}
+        >
           {response.fields.description.content.map(
             (paragraph: any, index: number) => (
               <div key={index}>
-                <div>
-                  {paragraph.content.map((text: any, index: number) =>
-                    isLink(text) ? (
-                      <a
-                        href={text.data.uri}
-                        target="_blank"
-                        key={index}
-                        className={`text-lg underline inline ${
-                          isBold(text) ? "font-bold" : "font-normal"
-                        } ${isCode(text) ? "text-primary font-semibold" : ""}`}
-                      >
-                        {text.content[0].value}
-                      </a>
-                    ) : (
-                      <p
-                        key={index}
-                        className={`text-lg inline ${
-                          isBold(text) ? "font-bold" : "font-normal"
-                        } ${isCode(text) ? "text-primary font-semibold" : ""} ${
-                          isUnderline(text) ? "underline" : ""
-                        }`}
-                      >
-                        {text.value}
-                      </p>
-                    )
-                  )}
-                </div>
+                {paragraph.content.map((text: any, index: number) =>
+                  isLink(text) ? (
+                    <a
+                      href={text.data.uri}
+                      target="_blank"
+                      key={index}
+                      className={`text-lg underline inline break ${
+                        isBold(text) ? "font-bold" : "font-normal"
+                      }`}
+                    >
+                      {text.content[0].value}
+                    </a>
+                  ) : (
+                    <p
+                      key={index}
+                      className={`text-lg inline ${
+                        isList(paragraph) ? "font-semibold text-primary" : ""
+                      } ${isBold(text) ? "font-semibold" : "font-normal"} ${
+                        isUnderline(text) ? "underline" : ""
+                      }`}
+                    >
+                      {isList(paragraph)
+                        ? text.content[0].content[0].value
+                        : text.value}
+                      {!isBold(text) && <br />}
+                    </p>
+                  )
+                )}
                 <br />
               </div>
             )
@@ -70,7 +79,21 @@ export default function ResponseElement({ response }: { response: ResponseT }) {
           response.fields.media.fields && (
             <img
               src={`https:${response.fields.media.fields.file.url}`}
-              className="w-full xs:w-[45%] ml-auto lg:ml-0"
+              // className={`w-1/2 xs:w-[40%] ml-auto lg:ml-0 -mb-24 lg:mb-0`}
+              className={css`
+                width: 40%;
+                margin-left: 0;
+                margin-bottom: 0;
+                margin-top: ${response.fields.mediaOffset}px;
+                @media screen and (max-width: 425px) {
+                  width: 50%;
+                }
+                @media screen and (max-width: 1024px) {
+                  margin-left: auto;
+                  margin-bottom: -6rem;
+                  margin-top: 0;
+                }
+              `}
             />
           )}
       </div>

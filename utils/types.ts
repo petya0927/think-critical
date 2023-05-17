@@ -39,5 +39,7 @@ export interface ResponseT {
     media: {
       fields: any
     },
+    mediaOffset: number,
+    mediaSize: number,
   }
 }
