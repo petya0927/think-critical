@@ -68,8 +68,44 @@ export default function Footer() {
         project to raise awareness of the importance of objective
         decision-making and critical thinking.
         <br />
-        The design was made at Media and Design, Eger, 2023 (EKKE MDI) by Hajdu
-        Boro. Consultant was Vajdics Tamás.
+        The design was made at{" "}
+        <Link
+          href="http://mdi.uni-eszterhazy.hu/"
+          className="underline text-gray-300"
+          target="_blank"
+        >
+          Media and Design Institue
+        </Link>
+        , Eger, 2023 (EKKE MDI) by{" "}
+        <Link
+          href="https://www.behance.net/borhajdu"
+          className="underline text-gray-300"
+          target="_blank"
+        >
+          Hajdu Boro
+        </Link>
+        .
+        <br />
+        Consultant was Vajdics Tamás.
+        <br />
+        <Link
+          href="https://github.com/petya0927"
+          className="underline text-gray-300"
+          target="_blank"
+        >
+          Unyi Peter Almos
+        </Link>{" "}
+        is the proud creator of this website, and the code used to build it{" "}
+        <br />
+        is an open source project that is available on{" "}
+        <Link
+          href="https://github.com/petya0927/think-critical"
+          target="_blank"
+          className="underline text-gray-300"
+        >
+          GitHub
+        </Link>
+        .
       </p>
     </div>
   );
