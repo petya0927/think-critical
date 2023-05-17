@@ -2,9 +2,9 @@ export default function Resthere() {
   return (
     <div className="h-screen bg-darkGray flex flex-col">
       <p className="text-white m-auto text-center">
-        If you've made it this far, tired adventurer, rest up.
+        If you&apos;ve made it this far, tired adventurer, rest up.
         <br />
-        Don't overwork yourself and always remember not to take life too
+        Don&apos;t overwork yourself and always remember not to take life too
         seriously.
       </p>
       <img
