@@ -1,13 +1,9 @@
 import Layout from "@/components/Layout";
 import ResourceCard from "@/components/ResourceCard";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import styles from "@/styles/Help.module.css";
 import BackButton from "@/components/BackButton";
 
 export default function HelpPage() {
-  const router = useRouter();
-
   return (
     <Layout>
       <div className="bg-darkGray">

@@ -2,8 +2,6 @@ import { ResponseT } from "@/utils/types";
 import { css } from "@emotion/css";
 
 export default function ResponseElement({ response }: { response: ResponseT }) {
-  console.log(response.fields);
-
   const isBold = (text: any) => {
     return text.marks && text.marks.some((mark: any) => mark.type === "bold");
   };
