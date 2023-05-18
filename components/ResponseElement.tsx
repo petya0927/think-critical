@@ -26,7 +26,7 @@ export default function ResponseElement({ response }: { response: ResponseT }) {
         response.fields.media !== undefined ? "mb-16 lg:mb-0" : ""
       }`}
     >
-      <div className="bg-primary px-9 py-6 rounded-t-xl">
+      <div className="bg-primary px-5 md:px-9 py-7 rounded-t-xl">
         <h2 className="font-bold text-2xl text-white">
           {response.fields.title}
         </h2>

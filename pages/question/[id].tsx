@@ -18,9 +18,9 @@ export default function Question({ questionData }: { questionData: Question }) {
           <meta name="description" content={questionData.fields.leadText} />
         </Head>
         <div className="bg-white pb-10">
-          <div className="flex flex-col gap-16 mt-10 sm:mt-16 px-7 md:px-32 xl:px-80 relative max-w-[2000px] m-auto">
+          <div className="flex flex-col gap-16 mt-10 sm:mt-16 px-7 lg:px-0 relative max-w-[905px] m-auto">
             <h1
-              className="font-semibold text-4xl md:text-6xl text-center mx-auto"
+              className="font-semibold text-4xl sm:text-6xl text-center mx-auto"
               dangerouslySetInnerHTML={{ __html: questionData.fields.title }}
             ></h1>
             <BackButton />
