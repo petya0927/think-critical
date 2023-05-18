@@ -8,7 +8,7 @@ export default function About() {
   return (
     <Layout>
       <Head>
-        <title>About the #THINK CRITICAL Campaign | #THINK CRITICAL</title>
+        <title>About | #THINK CRITICAL</title>
         <meta
           name="description"
           content="#CRITICAL THINKING is a social campaign within the framework of a
