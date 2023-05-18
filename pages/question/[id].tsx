@@ -4,17 +4,19 @@ import {
   getResponses,
 } from "@/utils/quesions";
 import { Question, ResponseT } from "@/utils/types";
-import { useState } from "react";
 import ResponseElement from "@/components/ResponseElement";
 import Layout from "@/components/Layout";
 import BackButton from "@/components/BackButton";
+import Head from "next/head";
 
 export default function Question({ questionData }: { questionData: Question }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     questionData && (
       <Layout>
+        <Head>
+          <title>{questionData.fields.title} | #THINK CRITICAL</title>
+          <meta name="description" content={questionData.fields.leadText} />
+        </Head>
         <div className="bg-white pb-10">
           <div className="flex flex-col gap-16 mt-10 sm:mt-16 px-7 md:px-32 xl:px-80 relative max-w-[2000px] m-auto">
             <h1

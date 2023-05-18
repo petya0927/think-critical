@@ -2,10 +2,23 @@ import Layout from "@/components/Layout";
 import styles from "@/styles/About.module.css";
 import BackButton from "@/components/BackButton";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function About() {
   return (
     <Layout>
+      <Head>
+        <title>About the #THINK CRITICAL Campaign | #THINK CRITICAL</title>
+        <meta
+          name="description"
+          content="#CRITICAL THINKING is a social campaign within the framework of a
+          university project to promote the conscious and purposeful use of
+          critical thinking, especially among young people. The task was to
+          build the image of a campaign, but we realised that the best
+          platform to capture the theme would be to build a website, so we
+          extended the campaign to include more people."
+        />
+      </Head>
       <div className="bg-darkGray">
         <div className="flex flex-col lg:flex-row justify-between gap-8 pt-10 xs:pt-20 md:pt-24 px-7 md:px-32 xl:px-80 pb-10 xs:pb-20 md:pb-24 max-w-[2000px] m-auto">
           <h1 className="text-white font-semibold text-4xl xl:text-5xl tracking-wide text-center md:text-left w-full my-auto">

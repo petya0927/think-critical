@@ -2,10 +2,24 @@ import Layout from "@/components/Layout";
 import ResourceCard from "@/components/ResourceCard";
 import styles from "@/styles/Help.module.css";
 import BackButton from "@/components/BackButton";
+import Head from "next/head";
 
 export default function HelpPage() {
   return (
     <Layout>
+      <Head>
+        <title>Help | #THINK CRITICAL</title>
+        <meta
+          name="description"
+          content="The main aim of the project is to raise awareness of the importance of
+          objective thinking. Please note that #CRITICAL THINKING is a campaign
+          within the framework of a university project, which is still in its
+          infancy. As a resource we have used sites that can provide more
+          advanced help on this issue. If you'd like to go deeper into the
+          subject, take a look at the document below, which summarises all the
+          sources we used to create this page."
+        />
+      </Head>
       <div className="bg-darkGray">
         <div className="flex flex-col lg:flex-row justify-between gap-8 pt-10 xs:pt-20 md:pt-24 px-7 md:px-32 xl:px-80 pb-10 xs:pb-20 md:pb-24 max-w-[2000px] m-auto">
           <h1 className="text-white font-semibold text-4xl xl:text-5xl tracking-wide text-center md:text-left lg:w-1/2 my-auto">

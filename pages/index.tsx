@@ -6,12 +6,20 @@ import styles from "@/styles/Index.module.css";
 import { getQuestions } from "@/utils/quesions";
 import { useState } from "react";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Index({ questions }: { questions: any }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className="h-screen relative overflow-hidden bg-[#121212]">
+      <Head>
+        <title>#THINK CRITICAL</title>
+        <meta
+          name="description"
+          content="#THINK CRITICAL © is a social campaign created as part of a university project to raise awareness of the importance of objective decision-making and critical thinking. The design was made at Media and Design Institue, Eger, 2023 (EKKE MDI) by Hajdu Boro. Consultant was Vajdics Tamás. Web development by petya0927."
+        />
+      </Head>
       <LoaderOverlay />
       <Link
         href="/resthere"
