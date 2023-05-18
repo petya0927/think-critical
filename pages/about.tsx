@@ -11,7 +11,7 @@ export default function About() {
         <title>About | #THINK CRITICAL</title>
         <meta
           name="description"
-          content="#CRITICAL THINKING is a social campaign within the framework of a
+          content="#THINK CRITICAL is a social campaign within the framework of a
           university project to promote the conscious and purposeful use of
           critical thinking, especially among young people. The task was to
           build the image of a campaign, but we realised that the best
@@ -51,7 +51,7 @@ export default function About() {
               What is #THINK CRITICAL?
             </h2>
             <p className="text-2xl font-helvetica">
-              #CRITICAL THINKING is a social campaign within the framework of a
+              #THINK CRITICAL is a social campaign within the framework of a
               university project to promote the conscious and purposeful use of
               critical thinking, especially among young people. The task was to
               build the image of a campaign, but we realised that the best
