@@ -7,9 +7,7 @@ export default function BackButton({ className }: { className?: string }) {
   return (
     <a
       onClick={() => (history.length > 1 ? router.back() : router.push("/"))}
-      className={
-        className || "xl:absolute xl:top-48 mr-auto xl:-translate-x-[140px]"
-      }
+      className={className}
     >
       <Image
         src={"/assets/icons/arrow-back-green-icon.svg"}
