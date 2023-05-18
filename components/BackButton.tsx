@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
@@ -6,9 +5,8 @@ export default function BackButton({ className }: { className?: string }) {
   const router = useRouter();
 
   return (
-    <Link
-      href="/"
-      onClick={() => router.back()}
+    <a
+      onClick={() => (history.length > 1 ? router.back() : router.push("/"))}
       className={
         className || "xl:absolute xl:top-48 mr-auto xl:-translate-x-[140px]"
       }
@@ -23,6 +21,6 @@ export default function BackButton({ className }: { className?: string }) {
         loading="lazy"
         className="cursor-pointer w-full h-full"
       />
-    </Link>
+    </a>
   );
 }
