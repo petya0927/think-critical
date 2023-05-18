@@ -10,7 +10,7 @@ export default function Navbar({
 }) {
   return (
     <div className="bg-darkGray">
-      <div className="w-full max-w-[2000px] m-auto px-7 md:px-32 xl:px-80 py-5 flex justify-between items-center">
+      <div className="w-full max-w-[1000px] m-auto px-7 lg:px-0 py-5 flex justify-between items-center">
         <Link href="/">
           <img src="/assets/images/logo-white.png" />
         </Link>
