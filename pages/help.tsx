@@ -35,7 +35,7 @@ export default function HelpPage() {
           />
         </div>
       </div>
-      <div className="pt-20 xs:pt-40 pb-32 px-7 md:px-32 xl:px-80 max-w-[2000px] mx-auto flex flex-col gap-16">
+      <div className="pt-20 xs:pt-40 pb-32 px-7 lg:px-0 max-w-[905px] mx-auto flex flex-col gap-16">
         <BackButton className="xl:absolute xl:top-[46rem] mr-auto xl:-translate-x-[140px]" />
         <div>
           <p className="text-2xl font-helvetica">
