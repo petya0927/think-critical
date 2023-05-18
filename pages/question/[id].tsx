@@ -14,7 +14,10 @@ export default function Question({ questionData }: { questionData: Question }) {
     questionData && (
       <Layout>
         <Head>
-          <title>{questionData.fields.title} | #THINK CRITICAL</title>
+          <title>
+            {questionData.fields.title.replaceAll("<br/>", " ")} | #THINK
+            CRITICAL
+          </title>
           <meta name="description" content={questionData.fields.leadText} />
         </Head>
         <div className="bg-white pb-10">
