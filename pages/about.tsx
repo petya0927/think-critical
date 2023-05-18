@@ -20,7 +20,7 @@ export default function About() {
         />
       </Head>
       <div className="bg-darkGray">
-        <div className="flex flex-col lg:flex-row justify-between gap-8 pt-10 xs:pt-20 md:pt-24 px-7 md:px-32 xl:px-80 pb-10 xs:pb-20 md:pb-24 max-w-[2000px] m-auto">
+        <div className="flex flex-col lg:flex-row justify-between gap-8 pt-10 xs:pt-20 md:pt-24 px-7 lg:px-0 pb-10 xs:pb-20 md:pb-24 max-w-[905px] m-auto">
           <h1 className="text-white font-semibold text-4xl xl:text-5xl tracking-wide text-center md:text-left w-full my-auto">
             Abou<span className={styles.imageUnderline}>t the </span>Campaign
             <br />
@@ -28,7 +28,7 @@ export default function About() {
           </h1>
         </div>
       </div>
-      <div className="pt-20 xs:pt-40 pb-32 px-7 md:px-32 xl:px-80 max-w-[2000px] mx-auto flex flex-col gap-16">
+      <div className="pt-20 xs:pt-40 pb-32 px-7 lg:px-0 max-w-[905px] mx-auto flex flex-col gap-16">
         <BackButton className="xl:absolute xl:top-[34rem] mr-auto xl:-translate-x-[140px]" />
         <div>
           <div className="mb-28">
