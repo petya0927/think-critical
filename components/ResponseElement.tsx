@@ -31,7 +31,7 @@ export default function ResponseElement({ response }: { response: ResponseT }) {
           {response.fields.title}
         </h2>
       </div>
-      <div className="px-5 md:px-10 flex flex-col lg:flex-row items-start gap-0 lg:gap-16">
+      <div className="px-5 md:px-10 flex flex-col lg:flex-row items-start gap-0 lg:gap-16 relative">
         <div
           className={css`
             width: calc(100% - ${response.fields.mediaSize + 64}px);

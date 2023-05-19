@@ -37,8 +37,8 @@ export default function HelpPage() {
       </div>
       <div className="pt-20 xs:pt-40 pb-32 px-7 md:px-20 lg:px-40 md:max-w-[calc(1100px+10rem)] lg:max-w-[calc(1100px+20rem)] mx-auto flex flex-col lg:flex-row items-start gap-[120px]">
         <BackButton className="w-[63px]" />
-        <div className="flex flex-col gap-[120px] w-full max-w-[905px]">
-          <div className="mb-[120px]">
+        <div className="flex flex-col w-full max-w-[905px]">
+          <div className="mb-[90px]">
             <p className="text-2xl font-helvetica">
               Critical thinking skills allow you to understand and address
               situations based on all available facts and information.
@@ -53,7 +53,7 @@ export default function HelpPage() {
               help you learn this technique.
             </p>
           </div>
-          <div className="mb-[120px]">
+          <div className="mb-[90px]">
             <div className="mb-[73px]">
               <h2 className="font-semibold text-4xl mb-7">
                 Guides for Parents and Their Children

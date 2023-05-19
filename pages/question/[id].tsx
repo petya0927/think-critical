@@ -15,24 +15,26 @@ export default function Question({ questionData }: { questionData: Question }) {
       <Layout>
         <Head>
           <title>
-            {questionData.fields.title.replaceAll("<br/>", " ").toString()} |
+            {questionData.fields.title.toString().replaceAll("<br/>", " ")} |
             #THINK CRITICAL
           </title>
           <meta name="description" content={questionData.fields.leadText} />
         </Head>
-        <div className="bg-white pb-10">
-          <div className="flex flex-col gap-16 mt-10 sm:mt-16 px-7 lg:px-0 relative max-w-[905px] m-auto">
+        <div>
+          <div className="flex flex-col gap-16 py-10 sm:py-10 px-7 md:px-20 lg:px-40 md:max-w-[calc(1100px+10rem)] lg:max-w-[calc(1100px+20rem)] mx-auto relative">
             <h1
               className="font-semibold text-4xl sm:text-6xl text-center mx-auto"
               dangerouslySetInnerHTML={{ __html: questionData.fields.title }}
             ></h1>
-            <BackButton />
-            <p className="text-2xl">{questionData.fields.leadText}</p>
-            {questionData.fields.response.map(
-              (response: ResponseT, index: number) => (
-                <ResponseElement key={index} response={response} />
-              )
-            )}
+            <BackButton className="relative lg:absolute lg:left-20 lg:top-52 w-fit" />
+            <div className="flex flex-col gap-16 max-w-[905px] mx-auto">
+              <p className="text-2xl">{questionData.fields.leadText}</p>
+              {questionData.fields.response.map(
+                (response: ResponseT, index: number) => (
+                  <ResponseElement key={index} response={response} />
+                )
+              )}
+            </div>
           </div>
         </div>
       </Layout>
