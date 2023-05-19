@@ -15,8 +15,8 @@ export default function Question({ questionData }: { questionData: Question }) {
       <Layout>
         <Head>
           <title>
-            {questionData.fields.title.replaceAll("<br/>", " ")} | #THINK
-            CRITICAL
+            {questionData.fields.title.replaceAll("<br/>", " ").toString()} |
+            #THINK CRITICAL
           </title>
           <meta name="description" content={questionData.fields.leadText} />
         </Head>
