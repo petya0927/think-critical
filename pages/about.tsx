@@ -20,17 +20,17 @@ export default function About() {
         />
       </Head>
       <div className="bg-darkGray">
-        <div className="flex flex-col lg:flex-row justify-between gap-8 pt-10 xs:pt-20 md:pt-24 px-7 lg:px-0 pb-10 xs:pb-20 md:pb-24 max-w-[905px] m-auto">
+        <div className="flex flex-col lg:flex-row justify-between gap-8 pt-10 xs:pt-20 md:pt-24 pb-10 xs:pb-20 md:pb-24 px-7 md:px-20 lg:px-40 md:max-w-[calc(1100px+10rem)] lg:max-w-[calc(1100px+20rem)] m-auto">
           <h1 className="text-white font-semibold text-4xl xl:text-5xl tracking-wide text-left w-full my-auto z-10">
-            About the C<span className={styles.imageUnderline}>ampai</span>gn
+            About the <span className={styles.imageUnderline}>Campaign</span>
             <br />
             in a Nutshell
           </h1>
         </div>
       </div>
-      <div className="pt-20 xs:pt-40 pb-32 px-7 lg:px-0 max-w-[905px] mx-auto flex flex-col gap-16">
-        <BackButton className="xl:absolute xl:top-[34rem] mr-auto xl:-translate-x-[140px]" />
-        <div>
+      <div className="pt-20 xs:pt-40 pb-32 px-7 md:px-20 lg:px-40 md:max-w-[calc(1100px+10rem)] lg:max-w-[calc(1100px+20rem)] m-auto flex flex-col lg:flex-row items-start gap-16">
+        <BackButton className="w-[63px]" />
+        <div className="flex flex-col w-full max-w-[905px]">
           <div className="mb-28">
             <h2 className="font-semibold text-[40px] mb-6">
               What is Critical Thinking?

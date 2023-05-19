@@ -10,13 +10,13 @@
   height: 100%;
   background: url("/assets/images/underline.svg") bottom no-repeat;
   background-size: 100% 12px;
-  transform: rotate(173deg) translate(107px, -18px);
+  transform: rotate(173deg) translate(190px, -7px);
   z-index: -1;
 }
 
 @media screen and (min-width: 1280px) {
   .imageUnderline::after {
     background-size: 100% 16px;
-    transform: rotate(173deg) translate(143px, -19px);
+    transform: rotate(173deg) translate(252px, -7px);
   }
 }
