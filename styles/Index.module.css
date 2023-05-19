@@ -13,3 +13,19 @@
     transform: rotate(360deg);
   }
 }
+
+.float {
+  animation: float 10s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px) rotate(-24deg);
+	}
+	50% {
+		transform: translatey(-100px) rotate(-24deg);
+	}
+	100% {
+		transform: translatey(0px) rotate(-24deg);
+	}
+}

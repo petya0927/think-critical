@@ -4,29 +4,37 @@ import {
   getResponses,
 } from "@/utils/quesions";
 import { Question, ResponseT } from "@/utils/types";
-import { useState } from "react";
 import ResponseElement from "@/components/ResponseElement";
 import Layout from "@/components/Layout";
 import BackButton from "@/components/BackButton";
+import Head from "next/head";
 
 export default function Question({ questionData }: { questionData: Question }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     questionData && (
       <Layout>
-        <div className="bg-white pb-10">
-          <div className="flex flex-col gap-16 mt-10 sm:mt-16 px-7 md:px-32 xl:px-80 relative max-w-[2000px] m-auto">
-            <h1 className="font-semibold text-4xl md:text-6xl text-center max-w-[790px] mx-auto">
-              {questionData.fields.title}
-            </h1>
-            <BackButton />
-            <p className="text-2xl">{questionData.fields.leadText}</p>
-            {questionData.fields.response.map(
-              (response: ResponseT, index: number) => (
-                <ResponseElement key={index} response={response} />
-              )
-            )}
+        <Head>
+          <title>
+            {questionData.fields.title.toString().replaceAll("<br/>", " ")} |
+            #THINK CRITICAL
+          </title>
+          <meta name="description" content={questionData.fields.leadText} />
+        </Head>
+        <div>
+          <div className="flex flex-col gap-16 py-10 sm:py-10 px-7 md:px-20 lg:px-40 md:max-w-[calc(1100px+10rem)] lg:max-w-[calc(1100px+20rem)] mx-auto relative">
+            <h1
+              className="font-semibold text-4xl sm:text-6xl text-center mx-auto"
+              dangerouslySetInnerHTML={{ __html: questionData.fields.title }}
+            ></h1>
+            <BackButton className="relative lg:absolute lg:left-20 lg:top-52 w-fit" />
+            <div className="flex flex-col gap-16 max-w-[905px] mx-auto">
+              <p className="text-2xl">{questionData.fields.leadText}</p>
+              {questionData.fields.response.map(
+                (response: ResponseT, index: number) => (
+                  <ResponseElement key={index} response={response} />
+                )
+              )}
+            </div>
           </div>
         </div>
       </Layout>

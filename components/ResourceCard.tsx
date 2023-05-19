@@ -12,13 +12,9 @@ export default function ResourceCard({
   link: string;
 }) {
   return (
-    <div className="bg-primary rounded-[20px] px-10 py-9 w-full max-h-min flex flex-col items-center gap-8">
+    <div className="bg-primary rounded-[20px] px-10 py-9 w-full max-h-min flex flex-col items-center gap-7">
       <h3 className="font-semibold text-2xl text-center">{title}</h3>
-      <img
-        src={image}
-        className="w-fit mt-auto
-      "
-      />
+      <img src={image} className="w-fit mt-auto" />
       <Link
         href={link}
         target="_blank"

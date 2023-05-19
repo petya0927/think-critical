@@ -2,8 +2,6 @@ import { ResponseT } from "@/utils/types";
 import { css } from "@emotion/css";
 
 export default function ResponseElement({ response }: { response: ResponseT }) {
-  console.log(response.fields);
-
   const isBold = (text: any) => {
     return text.marks && text.marks.some((mark: any) => mark.type === "bold");
   };
@@ -28,16 +26,21 @@ export default function ResponseElement({ response }: { response: ResponseT }) {
         response.fields.media !== undefined ? "mb-16 lg:mb-0" : ""
       }`}
     >
-      <div className="bg-primary px-9 py-6 rounded-t-xl">
+      <div className="bg-primary px-5 md:px-9 py-7 rounded-t-xl">
         <h2 className="font-bold text-2xl text-white">
           {response.fields.title}
         </h2>
       </div>
-      <div className="px-5 md:px-10 py-7 flex flex-col lg:flex-row items-start gap-0 lg:gap-16">
+      <div className="px-5 md:px-10 flex flex-col lg:flex-row items-start gap-0 lg:gap-16 relative">
         <div
-          className={`w-full ${
-            response.fields.media !== undefined && "lg:w-[60%]"
-          }`}
+          className={css`
+            width: calc(100% - ${response.fields.mediaSize + 64}px);
+            padding: 1.75rem 0;
+            @media screen and (max-width: 1024px) {
+              width: 100%;
+              padding: 1.75rem 0 1rem 0;
+            }
+          `}
         >
           {response.fields.description.content.map(
             (paragraph: any, index: number) => (
@@ -70,7 +73,8 @@ export default function ResponseElement({ response }: { response: ResponseT }) {
                     </p>
                   )
                 )}
-                <br />
+                {response.fields.description.content.indexOf(paragraph) !==
+                  response.fields.description.content.length - 1 && <br />}
               </div>
             )
           )}
@@ -79,18 +83,24 @@ export default function ResponseElement({ response }: { response: ResponseT }) {
           response.fields.media.fields && (
             <img
               src={`https:${response.fields.media.fields.file.url}`}
-              // className={`w-1/2 xs:w-[40%] ml-auto lg:ml-0 -mb-24 lg:mb-0`}
               className={css`
-                width: 40%;
+                position: absolute;
+                right: 40px;
+                width: ${response.fields.mediaSize
+                  ? response.fields.mediaSize + "px"
+                  : "40%"};
+                max-width: 300px;
                 margin-left: 0;
                 margin-bottom: 0;
-                margin-top: ${response.fields.mediaOffset}px;
-                @media screen and (max-width: 425px) {
-                  width: 50%;
-                }
+                margin-top: ${response.fields.mediaOffset
+                  ? response.fields.mediaOffset
+                  : 0}px;
                 @media screen and (max-width: 1024px) {
+                  position: relative;
+                  right: 0;
+                  width: 50%;
                   margin-left: auto;
-                  margin-bottom: -6rem;
+                  margin-bottom: -3rem;
                   margin-top: 0;
                 }
               `}

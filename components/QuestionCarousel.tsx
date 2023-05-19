@@ -62,6 +62,31 @@ export default function QuestionCarousel({
     }
   }, [currentQuestion, previousQuestion]);
 
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.key === "ArrowUp") {
+        handleArrowClick("up");
+      } else if (e.key === "ArrowDown") {
+        handleArrowClick("down");
+      }
+    };
+
+    const handleScroll = (e: WheelEvent) => {
+      if (e.deltaY < 0) {
+        handleArrowClick("up");
+      } else if (e.deltaY > 0) {
+        handleArrowClick("down");
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    window.addEventListener("wheel", handleScroll);
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+      window.removeEventListener("wheel", handleScroll);
+    };
+  }, [currentQuestion]);
+
   return (
     <div className="flex flex-col items-center justify-between absolute top-0 w-full h-screen py-32 lg:py-20 px-6 lg:px-24 z-0">
       <button onClick={() => handleArrowClick("up")}>
@@ -78,9 +103,8 @@ export default function QuestionCarousel({
                 ? "opacity-100 z-10"
                 : "opacity-0 z-0"
             }`}
-          >
-            {question.fields.title}
-          </Link>
+            dangerouslySetInnerHTML={{ __html: question.fields.title }}
+          ></Link>
         ))}
       <button onClick={() => handleArrowClick("down")}>
         <img src="/assets/icons/arrow-down-white-icon.svg" alt="down arrow" />

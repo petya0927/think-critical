@@ -1,6 +1,6 @@
 {
   "name": "think-critical",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -17,6 +17,7 @@
     "contentful": "^10.1.6",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
+    "lottie-web": "^5.11.0",
     "next": "13.3.0",
     "postcss": "8.4.21",
     "react": "18.2.0",
