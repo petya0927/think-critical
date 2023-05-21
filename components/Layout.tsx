@@ -10,7 +10,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div>
       <Menu isMenuOpen={isMenuOpen} isMainPage={false} />
       <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <main>{children}</main>
+      <main className="mb-32">{children}</main>
       <Footer />
     </div>
   );
