@@ -21,7 +21,7 @@ export default function Question({ questionData }: { questionData: Question }) {
           <meta name="description" content={questionData.fields.leadText} />
         </Head>
         <div>
-          <div className="flex flex-col gap-16 py-10 sm:py-10 px-7 md:px-20 lg:px-40 md:max-w-[calc(1100px+10rem)] lg:max-w-[calc(1100px+20rem)] mx-auto relative">
+          <div className="flex flex-col gap-16 pt-10 px-7 md:px-20 lg:px-40 md:max-w-[calc(1100px+10rem)] lg:max-w-[calc(1100px+20rem)] mx-auto relative">
             <h1
               className="font-semibold text-4xl sm:text-6xl text-center mx-auto"
               dangerouslySetInnerHTML={{ __html: questionData.fields.title }}

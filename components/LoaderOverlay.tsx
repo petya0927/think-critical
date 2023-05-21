@@ -25,7 +25,7 @@ export default function LoaderOverlay() {
         styles.fadeOut,
       ].join(" ")}
     >
-      <div id="hashtag-animation" className="w-full h-full max-w-[100px]" />
+      <div id="hashtag-animation" className="w-full h-full max-w-[200px]" />
     </div>
   );
 }

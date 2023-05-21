@@ -28,7 +28,7 @@ export default function About() {
           </h1>
         </div>
       </div>
-      <div className="pt-20 xs:pt-40 pb-32 px-7 md:px-20 lg:px-40 md:max-w-[calc(1100px+10rem)] lg:max-w-[calc(1100px+20rem)] m-auto flex flex-col lg:flex-row items-start gap-16">
+      <div className="pt-20 xs:pt-40 px-7 md:px-20 lg:px-40 md:max-w-[calc(1100px+10rem)] lg:max-w-[calc(1100px+20rem)] m-auto flex flex-col lg:flex-row items-start gap-16">
         <BackButton className="w-[63px]" />
         <div className="flex flex-col w-full max-w-[905px]">
           <div className="mb-28">

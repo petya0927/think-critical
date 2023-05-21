@@ -10,7 +10,11 @@ export default function Footer() {
         <div className="flex flex-row gap-10">
           <Link href="/about">About</Link>
           <Link href="/help">Help</Link>
-          <Link href="https://instagram.com/" passHref={true} target="_blank">
+          <Link
+            href="https://www.instagram.com/think_critical_campaign/"
+            passHref={true}
+            target="_blank"
+          >
             Instagram
           </Link>
         </div>
@@ -58,7 +62,11 @@ export default function Footer() {
         <div className="flex flex-row gap-10">
           <Link href="/about">About</Link>
           <Link href="/help">Help</Link>
-          <Link href="https://instagram.com/" passHref={true} target="_blank">
+          <Link
+            href="https://www.instagram.com/think_critical_campaign/"
+            passHref={true}
+            target="_blank"
+          >
             Instagram
           </Link>
         </div>
