@@ -96,6 +96,7 @@ export default function Footer() {
         <br />
         Consultant was Vajdics Tamás.
         <br />
+        Website created by
         <Link
           href="https://github.com/petya0927"
           className="underline text-gray-300"
@@ -103,7 +104,7 @@ export default function Footer() {
         >
           Unyi Peter Almos
         </Link>{" "}
-        is the proud creator of this website, and the code used to build it{" "}
+        , the code used to build it{" "}
         <br />
         is an open source project that is available on{" "}
         <Link
