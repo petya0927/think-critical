@@ -96,7 +96,7 @@ export default function Footer() {
         <br />
         Consultant was Vajdics Tamás.
         <br />
-        Website created by
+        Website created by{" "}
         <Link
           href="https://github.com/petya0927"
           className="underline text-gray-300"
